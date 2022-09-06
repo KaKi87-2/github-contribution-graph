@@ -144,10 +144,11 @@ export const create = ({
                 dayElement.setAttribute('data-gcg-month', date.getMonth().toString());
                 dayElement.addEventListener('click', () => {
                     if(typeof onClick === 'function'){
+                        const timestampsString = dayElement.getAttribute('data-gcg-timestamps');
                         onClick({
                             day: parseInt(dayElement.getAttribute('data-gcg-day')),
                             month: parseInt(dayElement.getAttribute('data-gcg-month')),
-                            timestamps: dayElement.getAttribute('data-gcg-timestamps').split(',').map(_ => parseInt(_))
+                            timestamps: timestampsString ? timestampsString.split(',').map(_ => parseInt(_)) : []
                         });
                     }
                 });
