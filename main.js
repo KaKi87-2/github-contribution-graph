@@ -94,7 +94,7 @@ const getMonths = locale => [...Array(12).keys()].map(monthNumber => {
  * *
  * @param {number[]} timestamps
  * @param {Intl.LocalesArgument} locale
- * @param {function} onClick
+ * @param {function} [onClick]
  * @returns {HTMLDivElement}
  */
 export const create = ({
